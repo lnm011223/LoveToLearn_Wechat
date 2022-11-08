@@ -11,7 +11,7 @@ export function getInterfaceRoute(name: string) {
 const URL1 = {
   develop: 'https://sanli-tracks.com/sanlia',
   product: 'https://sanli-tracks.com/sanli',
-  local: 'http://127.0.0.1/hsyiilnm',
+  local: 'http://127.0.0.1/LoveToLearn_Server',
 }
 export const url = URL1.local;
 
