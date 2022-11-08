@@ -1,0 +1,9 @@
+<!--components/sl-title-2/index.wxml-->
+<view class="title-wrapper">
+    <!-- background -->
+    <image src="../../svg/default/course.svg" mode="widthFix" class="background"></image>
+    <view class="title">
+      <view>{{h1}}</view>
+      <view>{{h2}}</view>
+    </view>
+  </view>

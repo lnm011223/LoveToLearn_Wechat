@@ -1,0 +1,56 @@
+/* components/sl-form-ceil/index.wxss */
+.ceil {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  padding: 2.5%;
+  border-bottom: 2px #d3d3d3 solid;
+  width: 100%;
+  height: fit-content;
+  transition: all 0.25s;
+}
+.ceil.focus {
+  border: 3px #0066ff66 solid;
+  border-radius: .75em;
+  transition: all 0.25s;
+}
+.ceil .title {
+  flex: 1;
+}
+.ceil .input {
+  flex: 2.5;
+  display: block;
+  max-width: 80%;
+  overflow-x: scroll;
+}
+.ceil .input::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.ceil .tips-wrapper {
+  position: absolute;
+  width: 70%;
+  max-height: 300rpx;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  top: 100%;
+  left: 25%;
+  margin: 2.5% 0;
+  box-sizing: border-box;
+  background: #fafafa;
+  box-shadow: 4px 4px 5px #f1f1f1, -4px -4px 5px #fff;
+  z-index: 9999;
+  border-radius: .5em;
+  color: #444;
+}
+.ceil .tips-wrapper .item {
+  position: relative;
+  z-index: 999;
+  box-sizing: border-box;
+  padding: 5%;
+  border-bottom: 1px #eee solid;
+}

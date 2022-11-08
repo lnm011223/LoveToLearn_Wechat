@@ -1,0 +1,19 @@
+<!--components/sl-region-picker/index.wxml-->
+<view class="root">
+  <picker mode="multiSelector" 
+    range="{{multiArray}}" 
+    value="{{multiIndex}}"
+    bindcolumnchange="multiChange"
+    bindchange="trigger">
+    <view class="flexbox">
+      <block wx:if="{{regionActive}}">
+        <view class="ceil">{{multiArray[0][multiIndex[0]]}}</view>
+        <view class="ceil">{{multiArray[1][multiIndex[1]]}}</view>
+        <view class="ceil">{{multiArray[2][multiIndex[2]]}}</view>
+      </block>
+      <block wx:else>
+        <view class="ceil">请选择</view>
+      </block>
+    </view>
+  </picker>
+</view>

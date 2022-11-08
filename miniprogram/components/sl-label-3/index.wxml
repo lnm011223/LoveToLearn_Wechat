@@ -1,0 +1,14 @@
+<!--components/sl-label-3/index.wxml-->
+<view 
+  class="root"
+  style="padding: {{style.padding || '5%'}}; border-radius: {{style.radius || '1em' }}; box-shadow: {{style.shadow || '4px 4px 5px #f1f1f1, -4px -4px 5px #fff'}}; color: {{style.color || '#444'}}; background: {{style.background || '#fafafa'}}; margin: {{style.margin || '0 2.5%'}};display: {{style.display || 'flex'}};"
+  id="sl-label-3">
+  <view 
+    class="value"
+    style="color: {{style.valueColor || '#444'}}; font-size: {{style.valueFontSize || 'medium'}}; font-weight: {{style.valueFontWeight || '700'}};">{{value}}</view>
+  <view
+    style="width: 100%; height: {{style.lineHeight || '2.5vw'}};"></view>
+  <view 
+    class="key"
+    style="color: {{style.keyColor || '#888'}}; font-size: {{style.keyFontSize || 'small'}}; font-weight: {{style.keyFontWeight || '300'}};">{{key}}</view>
+</view>

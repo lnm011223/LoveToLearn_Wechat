@@ -1,0 +1,24 @@
+/* components/sl-button-1/index.wxss */
+.btn {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  width: var(--width);
+  height: var(--height);
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.75em;
+  box-shadow: 4px 4px 5px #f1f1f1, -4px -4px 5px #fff;
+  background: var(--background);
+  padding: 2.5% 10%;
+  transition: all 0.25s;
+  color: var(--color);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.btn[data-id = "1"]  {
+  box-shadow: inset 4px 4px 5px #f1f1f1, inset -4px -4px 5px #fff;
+  color: var(--active-color);
+  transition: all 0.25s;
+  background: #fafafa;
+}

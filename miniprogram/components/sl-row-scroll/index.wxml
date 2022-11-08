@@ -1,0 +1,19 @@
+<!--components/sl-row-scroll/index.wxml-->
+<view 
+  class="scroll-wrapper"
+  style="--color: {{color[title]}}">
+  <view class="title">
+    <image src="{{icon[title]}}" mode="widthFix"></image>
+    {{title}}
+  </view>
+  <block wx:for="{{data}}" wx:key="item">
+    <view class="ceil" catchtap="toCourseDetail" data-id="{{item.id}}" data-type="{{item.isOnly}}">
+      <image src="{{item.PicUrl}}" mode="aspectFill" class="picture"></image>
+      <!-- 活动描述 -->
+      <view class="desc">
+        <view>{{item.Name}}</view>
+      </view>
+      {{item.Name}}
+    </view>
+  </block>
+</view>

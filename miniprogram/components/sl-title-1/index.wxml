@@ -1,0 +1,6 @@
+<!--components/sl-title-1/index.wxml-->
+<view class="root">
+  <view class="title">
+    <slot></slot>
+  </view>
+</view>

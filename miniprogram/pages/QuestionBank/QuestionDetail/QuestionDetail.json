@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "sl-widgets-ceil": "../../../components/sl-widgets-ceil/index",
+    "sl-column-ceil": "../../../components/sl-column-ceil/index",
+    "sl-default-empty": "../../../components/sl-default-empty/index",
+    "sl-button-1": "../../../components/sl-button-1/index",
+    "sl-button-2": "../../../components/sl-button-2/index",
+    "sl-check-button": "../../../components/sl-check-button/index",
+    "date-picker": "../../../components/common/date-picker/index",
+    "sl-title-2": "../../../components/sl-title-2/index"
+  },
+  "navigationStyle": "custom"
+}

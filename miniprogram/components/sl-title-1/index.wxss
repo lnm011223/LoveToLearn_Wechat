@@ -1,0 +1,52 @@
+/* components/sl-title-1/index.wxss */
+.root {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 40vw;
+  padding: 10% 0 0 0;
+  justify-content: center;
+  z-index: 0;
+  /* background-image: linear-gradient(to bottom, #00cdff, #82d8cf); */
+  border-radius: 0 0 10% 10%;
+}
+.title {
+  color: #fafafa;
+  font-weight: bolder;
+}
+.title::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 200vw;
+  height: 200vw;
+  bottom: -7.5vw;
+  left: -50vw;
+  background-image: linear-gradient(to bottom, #00cdff, #82d8cf);
+  border-radius: 45%;
+  animation: wave 10s linear infinite;
+}
+.title::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 200vw;
+  height: 200vw;
+  bottom: -2.5vw;
+  left: -50vw;
+  background-image: linear-gradient(to bottom, #00cdff66, #82d8cf66);
+  border-radius: 37.5%;
+  animation: wave 10s linear infinite;
+  animation-delay: 2s;
+}
+@keyframes wave {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}

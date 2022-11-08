@@ -1,0 +1,11 @@
+<!--components/sl-label-2/index.wxml-->
+<view 
+  class="ceil" 
+  data-id="{{status}}" 
+  catchtap="btnTap"
+  style="font-size: {{style.fontSize || 'medium'}}; padding: {{style.padding || '2.5%'}}; color: {{style.color || '#666'}}; border-bottom: {{style.borderBottom || 'none'}};">
+  <image 
+    src="{{icon || '../../svg/news.svg'}}" mode="widthFix"
+    style="width: {{style.iconWidth || '7.5%'}}; height: auto;"></image>
+  {{text}}
+</view>

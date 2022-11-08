@@ -1,0 +1,16 @@
+<!--components/sl-top-filter/index.wxml-->
+<view class="root">
+
+  <view 
+    class="top-filter" 
+    style="--count: {{count}}">
+    <view wx:for="{{list}}" wx:key="item">
+      <view 
+        class="ceil {{selected == index ? 'selected' : ''}}"
+        data-id="{{index}}"
+        catchtap="changeIndex">
+        {{item}}
+      </view>
+    </view>
+  </view>
+</view>

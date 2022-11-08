@@ -1,0 +1,81 @@
+/* components/sl-row-scroll/index.wxss */
+.scroll-wrapper {
+  display: block;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  align-items: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+  width: 100vw;
+  height: 60vw;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  /* background: #fafafa; */
+  /* box-shadow: inset 4px 4px 5px #f1f1f1, inset -2px -2px 3px #fff; */
+}
+.scroll-wrapper::-webkit-scrollbar {
+  width: 0%;
+  height: 0%;
+}
+.scroll-wrapper::-webkit-scrollbar-track {
+  width: 0%;
+  height: 0%;
+}
+.scroll-wrapper .title {
+  position: sticky;
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  left: 5%;
+  top: 5%;
+  margin: 0 0 -5% 0;
+  color: #444;
+  font-weight: 700;
+}
+.scroll-wrapper .title::after {
+  content: '';
+  display: block;
+  z-index: -1;
+  position: absolute;
+  width: 150rpx;
+  height: 20rpx;
+  background: var(--color);
+  bottom: 0%;
+  left: calc(50rpx + 1.25%);
+  border-radius: 2em;
+}
+.scroll-wrapper .title image {
+  width: 50rpx;
+  height: auto;
+  margin: 0 1.25% 0 0;
+}
+.scroll-wrapper .ceil {
+  display: inline-block;
+  position: relative;
+  z-index: 9;
+  width: 80vw;
+  height: 45vw;
+  margin: 10vw 2.5vw 1.25vw 2.5vw;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 5px #f1f1f1, -4px -4px 5px #fff;
+  border-radius: 1em;
+  overflow: hidden;
+}
+.scroll-wrapper .ceil .picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.scroll-wrapper .ceil .desc {
+  position: absolute;
+  z-index: 13;
+  bottom: 0%;
+  width: 100%;
+  padding: 2.5% 5%;
+  box-sizing: border-box;
+  background: #fafafa;
+  font-size: 30rpx;
+  color: #444;
+  text-align: left;
+}

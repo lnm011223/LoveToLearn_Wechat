@@ -1,0 +1,19 @@
+<view 
+  catchtap="bindtap"
+  class="ceil"
+  data-id="{{status}}"
+  style="width: {{style.width || '100%'}}; height: {{style.height || '15vh'}}; margin: {{style.margin || '2.5% 0'}}; padding: {{style.padding || '5%'}}; background: {{style.background || '#fafafa'}};">
+  <view style="width: 60%; margin-right: 2.5%; position: relative; height: 100%;">
+    <view class="title" style="font-size: {{style.titleFontSize || 'smaller'}};">
+      {{type == 'course' ? item.title : "《"+item.book_name+"》"}}
+    </view>
+    <view class="end-time" style="align-items:center;">
+      <image 
+        src="{{type == 'course' ? '../../svg/deadline.svg' : '../../svg/news.svg'}}" 
+        mode="widthFix" 
+        style="width: {{style.iconWidth || '7.5%'}}; height: auto; margin-right: 10rpx; filter: {{type == 'course' ? 'hue-rotate(-120deg);' : 'hue-rotate(0deg);'}}"></image>
+      <view style="color: {{style.timeColor || '#0066ffaa'}}; white-space: pre-wrap;">{{type == '' ? '作者：'+item.author : item.news_club_name}}</view>
+    </view>
+  </view>
+  <image class="picture" src="{{item.pic || item.imagesurl}}" mode="aspectFill"></image>
+</view>

@@ -1,0 +1,103 @@
+<!--components/sl-apply-ceil/index.wxml-->
+<view class="apply-ceil" data-id="{{item.detail.id}}" catchtap="getDetail">
+  <image src="{{item.info.imagesurl}}" mode="aspectFill" class="image"></image>
+  <view class="title">
+    <view>{{item.detail.coursename}}</view>
+    <view>
+      <view>数量：<text style="color: #0066ffaa;">x{{item.detail.order_num || 1}}</text> · ￥{{item.info.price}}</view>
+      <block wx:if="{{id_flag != 'student'}}">
+        <view>{{item.detail.name}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="tool-bar">
+    <view class="tag">{{item.type}}</view>
+    <block wx:if="{{id_flag != 'teacher'}}">
+      <block wx:if="{{item.type != '待付款'}}">
+        <view class="button">
+          <sl-button-2 
+            style="{{ {width: '150rpx', height: '50rpx', fontSize: 'small', background: '#0066ff05', color: '#0066ff99', border: '#0066ff66'} }}"
+            catchtap="toContinue">继续报名</sl-button-2>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="button">
+          <sl-button-2 
+            style="{{ {width: '150rpx', height: '50rpx', fontSize: 'small', background: '#0066ff05', color: '#0066ff99', border: '#0066ff66'} }}"
+            catchtap="toOrderConfirm"
+            data-id="{{item.detail.id}}" data-type="{{item.detail.courseid}}" >去付款</sl-button-2>
+        </view>
+      </block>
+      <block wx:if="{{item.type == '已完成' && item.detail.isComment != '1' }}">
+        <view class="button">
+          <sl-button-2 
+            style="{{ {width: '125rpx', height: '50rpx', fontSize: 'small', color: '#888', background: '#f6f6f6', border: '#888'} }}"
+            catchtap="toComment">评价</sl-button-2>
+        </view>
+      </block>
+      <block wx:else wx:if="{{item.type == '报名成功'}}">
+        <view class="button">
+          <sl-button-2 
+            style="{{ {width: '125rpx', height: '50rpx', fontSize: 'small', color: '#888', background: '#f6f6f6', border: '#888'} }}"
+            catchtap="refund"
+            data-id="{{item.detail.id}}">退款</sl-button-2>
+        </view>
+      </block>
+      <view class="button">
+        <sl-button-2 
+          style="{{ {width: '100rpx', height: '50rpx', fontSize: 'small', background: '#ff000005', color: '#ff000055', border: '#ff000055'} }}"
+          catchtap="toDelete"
+          data-id="{{item.detail.id}}"
+          data-type="{{item.detail.status}}">删除</sl-button-2>
+      </view>
+    </block>
+    <block wx:else>
+    <!-- 导师端 -->
+      <block wx:if="{{item.type == '审核中'}}">
+        <sl-button-2 
+          style="{{ {width: '150rpx', height: '50rpx', fontSize: 'small', background: '#ff000005', color: '#ff000055', border: '#ff000055'} }}"
+          catchtap="teacherToCancel"
+          data-id="{{item.detail.id}}"
+          data-type="{{item.detail.status}}">取消报名</sl-button-2>
+      </block>
+      <block wx:elif="{{item.type == '已完成'}}">
+        <view class="button">
+        <sl-button-2 
+          style="{{ {width: '100rpx', height: '50rpx', fontSize: 'small', background: '#ff000005', color: '#0066ff55', border: '#0066ff55'} }}"
+          catchtap="toComment"
+          data-id="{{item.detail.id}}"
+          data-type="{{item.detail.status}}">评价</sl-button-2>
+        </view>
+      </block>
+      <block wx:if="{{item.type != '审核中' && item.type != '报名成功'}}">
+        <view class="button">
+        <sl-button-2 
+          style="{{ {width: '100rpx', height: '50rpx', fontSize: 'small', background: '#ff000005', color: '#ff000055', border: '#ff000055'} }}"
+          catchtap="toDelete"
+          data-id="{{item.detail.id}}"
+          data-type="{{item.detail.status}}">删除</sl-button-2>
+        </view>
+      </block>
+    </block>
+  </view>
+</view>
+
+<!-- 取消条款弹窗 -->
+<action-sheet hidden="{{actionSheetHide}}" style="border-radius: 50rpx;" bindchange="foldCancelContract" data-id="cancel">
+  <view class="cancel-contract">
+    <view style="width: 100%; text-align: center; margin: 0 0 2.5% 0;">取消条款说明</view>
+    <block wx:for="{{cancelContract}}" wx:key="item">
+      <view class="ceil">{{item}}</view>
+    </block>
+    <view style="width: 35%; margin: 5% 0;">
+      <sl-button-2 
+      style="{{ {background: '#0066ff01', color: '#888', border: '#888'} }}"
+        bindtap="foldCancelContract" data-id="cancel">取消</sl-button-2>
+    </view>
+    <view style="width: 35%; margin: 5% 0;">
+      <sl-button-2 
+        style="{{ {color: '#e66', background: '#ee666601', border: '#e66'} }}"
+        bindtap="foldCancelContract" data-id="confirm">确定</sl-button-2>
+    </view>
+  </view>
+</action-sheet>

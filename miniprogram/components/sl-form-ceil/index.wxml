@@ -1,0 +1,30 @@
+<!--components/sl-form-ceil/index.wxml-->
+
+  <view
+    style="margin: {{style.margin || '0'}}; font-size: {{style.fontSize || 'smaller'}};"
+    class="ceil {{focus ? 'focus' : ''}}">
+    <view 
+      class="title"
+      style="color: {{focus ? '#444' : '#888'}}; transition: all 0.25s;">{{title}}</view>
+    <input 
+      class="input" 
+      disabled="{{disabled}}"
+      type="{{title == '身份证' ? 'idcard' : title == '电话' || title == '年级' || title == '班级' ? 'number' : 'text'}}"
+      bindfocus="ceilFocus"
+      bindblur="ceilOutFocus" 
+      bindinput="inputting"
+      adjust-position="{{true}}"
+      cursor-spacing="10"
+      always-embed="{{true}}"
+      value="{{input}}"/>
+    <block wx:if="{{tips}}">
+      <!-- 模糊搜索结果 -->
+      <view class="tips-wrapper">
+        <block wx:for="{{tips}}" wx:key="item">
+          <view 
+            class="item" 
+            data-id="{{item.club_name}}" catchtap="bindTipsTap">{{item.club_name}}</view>
+        </block>
+      </view>
+    </block>
+  </view>

@@ -1,0 +1,8 @@
+<!--components/sl-button-1/index.wxml-->
+
+<view 
+  class="btn" 
+  style="--color: {{style.color || '#888'}}; --active-color: {{style.color || '#0066ffaa'}}; --width:{{style.width || '100%'}}; --height: {{style.height || '100%'}};--background: {{style.background || '#fafafa'}}; border-radius: {{style.radius || '.5em'}}; font-size: {{style.fontSize || 'medium'}}; font-weight: {{style.fontWeight || '700'}}; {{style.noShadow ? 'box-shadow: none;' : ''}}" 
+  data-id="{{status}}" catchtap="btnTap">
+  <slot name="ctn"></slot>
+</view>

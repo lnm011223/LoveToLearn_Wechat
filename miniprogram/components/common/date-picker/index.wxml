@@ -1,0 +1,8 @@
+<!--components/common/date-picker/index.wxml-->
+<view class="root">
+  <picker mode="date" value="{{date}}" bindchange="dateChange">
+    <view class="flexbox">
+      <view class="ceil">{{date || type || '请选择'}}</view>
+    </view>
+  </picker>
+</view>

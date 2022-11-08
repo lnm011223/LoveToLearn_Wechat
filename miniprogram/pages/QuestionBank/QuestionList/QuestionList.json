@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "sl-widgets-ceil": "../../../components/sl-widgets-ceil/index",
+    "sl-title-2": "../../../components/sl-title-2/index",
+    "sl-column-ceil": "../../../components/sl-column-ceil/index",
+    "sl-column-ceil-qusetion": "../../../components/sl-column-ceil-qusetion/index"
+  }
+}

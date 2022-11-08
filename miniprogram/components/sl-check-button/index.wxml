@@ -1,0 +1,13 @@
+<!--components/sl-check-button/index.wxml-->
+<view 
+  style="position: relative; box-sizing: border-box; width: {{style.width || '95%'}}; height: {{style.height || 'fit-content'}}; margin: {{style.margin || '2.5%'}}; flex: {{style.flex || '1'}};">
+  <view class="btn" 
+    data-id="{{status}}" 
+    catchtap="btnTap"
+    style="border-radius: {{style.radius || '1em'}}; padding: {{style.padding || '5%'}};">
+    <block wx:if="{{icon}}">
+      <image src="{{icon}}" mode="widthFix" class="icon"></image>
+    </block>
+    {{text}}
+  </view>
+</view>

@@ -1,0 +1,10 @@
+<!--components/sl-button-3/index.wxml-->
+<view 
+  class="btn" 
+  style="color: {{style.color ? style.color : '#444'}}; background: {{style.background ? style.background : '#fafafa'}}; --width: {{style.width ? style.width : '100vw'}}; --height: {{style.height ? style.height : style.width ? style.width : '200rpx'}}; border-radius: {{style.radius || '.5em'}};" 
+  data-id="{{status}}" 
+  bindtap="btnTap">
+  <image src="{{imageUrl[type] ? imageUrl[type] : '/svg/edu.svg'}}" mode="widthFix" class="background"></image>
+  <slot></slot>
+</view>
+

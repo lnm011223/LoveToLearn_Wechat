@@ -1,0 +1,25 @@
+/* components/sl-button-4/index.wxss */
+.ceil {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 20vw;
+  box-sizing: border-box;
+  border-radius: 2.5em;
+  box-shadow: 4px 4px 5px #f1f1f1, -4px -4px 5px #fff;
+  transition: all 0.25s;
+}
+.ceil[data-id = "1"] {
+  box-shadow: inset 4px 4px 5px #f1f1f1, inset -4px -4px 5px #fff;
+  color: #888;
+  transition: all 0.25s;
+}
+.ceil[data-id = "1"] image {
+  filter: hue-rotate(-15deg);
+}
+.ceil image {
+  width: 15%;
+  height: auto;
+}

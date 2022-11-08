@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "sl-button-2": "../sl-button-2/index"
+  }
+}

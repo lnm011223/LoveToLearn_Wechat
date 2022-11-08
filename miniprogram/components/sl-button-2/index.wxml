@@ -1,0 +1,8 @@
+<!--components/sl-button-2/index.wxml-->
+<view 
+  class="btn" 
+  style="color: {{style.color || '#0066ffaa'}}; background: {{style.background || '#0066ff01'}}; border-color: {{style.border || '#0066ff55'}}; font-size: {{style.fontSize || 'medium'}}; border-radius: {{style.radius || '1em'}}; width: {{style.width || '100%'}}; height: {{style.height || '100%'}}; font-weight: {{style.fontWeight || '400'}}; " 
+  data-id="{{status}}" 
+  catchtap="btnTap">
+  <slot></slot>
+</view>

@@ -1,0 +1,101 @@
+/* pages/Question/Question.wxss */
+
+/* 筛选按钮 */
+.filter-wrapper {
+  position: absolute;
+  z-index: 999;
+  width: 100rpx;
+  height: 100rpx;
+  top: 20%;
+  right: 7.5%;
+}
+/* 主体 */
+.main {
+  position: relative;
+  height: 70vh;
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.main::-webkit-scrollbar {
+  width: 0%;
+  height: 0%;
+}
+.main::-webkit-scrollbar-track {
+  width: 0%;
+  height: 0%;
+}
+/* 筛选框 */
+.filter-root {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background: #fafafa;
+  z-index: 0;
+  padding: 30vh 0 0 0;
+  box-sizing: border-box;
+}
+.filter-root .content {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 80%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.filter-root .content::-webkit-scrollbar {
+  width: 0%;
+  height: 0%;
+}
+.filter-root .content::-webkit-scrollbar-track {
+  width: 0%;
+  height: 0%;
+}
+.filter-root .content .ceil {
+  position: relative;
+  margin: 10% 0;
+}
+.filter-root .content .ceil .title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1.25% 5%;
+  margin: 2.5% 0;
+  letter-spacing: 1px;
+}
+.filter-root .content .ceil .title::after {
+  content: '';
+  position: absolute;
+  width: 20%;
+  height: 7.5rpx;
+  bottom: 0%;
+  background: #f1f1f1;
+  border-radius: 2em;
+}
+.filter-root .content .ceil .title image {
+  width: 7.5%;
+  height: auto;
+  margin: 0 1.25% 0 0;
+}
+/* 确认筛选按钮 */
+.filter-root .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 20%;
+  flex-wrap: nowrap;
+}
+.filter-root .button .ceil {
+  width: 30%;
+  height: 35%;
+  margin: auto 7.5%;
+}

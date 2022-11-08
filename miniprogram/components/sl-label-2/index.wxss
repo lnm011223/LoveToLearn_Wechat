@@ -1,0 +1,25 @@
+/* components/sl-label-2/index.wxss */
+.ceil {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  align-items: center;
+  padding: 2.5% 2.5%;
+  box-sizing: border-box;
+  /* margin: 2.5% 0; */
+  letter-spacing: 1px;
+  font-size: medium;
+  transition: all 0.25s;
+  color: #666;
+}
+.ceil image {
+  width: 7.5%;
+  height: auto;
+  margin: 0 1.25% 0 0;
+}
+.ceil[data-id = "1"] {
+  color: #888;
+  transform: scale3d(1.05, 1.05, 1.05);
+  filter: hue-rotate(-15deg);
+  transition: all 0.25s;
+}

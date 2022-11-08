@@ -1,0 +1,5 @@
+<!--components/sl-default-empty/index.wxml-->
+<view class="default">
+  <image src="/svg/default/empty.svg" mode="widthFix"></image>
+  <slot></slot>
+</view>

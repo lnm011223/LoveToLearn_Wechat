@@ -1,0 +1,29 @@
+/* components/sl-info-box/index.wxss */
+.info-box {
+  position: relative;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 90%;
+  margin: 5%;
+  padding: 2.5%;
+  flex-wrap: wrap;
+}
+.info-box .ceil {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  align-items: center;
+  color: #666;
+  font-size: smaller;
+  border-bottom: 2px #d3d3d3 solid;
+  padding: 1.25% 1.25% 1.25% 2.5%;
+  margin: 2.5% 0;
+}
+.info-box .ceil image {
+  width: 8.75%;
+  height: auto;
+  margin: 0 2.5% 0 0;
+}

@@ -1,0 +1,12 @@
+<!--components/sl-button-4/index.wxml-->
+<view 
+  class="ceil" 
+  style="width: {{style.width || '100%'}}; height: {{style.height || '20vw'}}; margin: {{style.margin || '0'}}; border-radius: {{style.radius || '2em'}};"
+  data-id="{{active}}"
+  catchtap="btnTap">
+  <image 
+    src="{{icon}}" 
+    mode="widthFix" 
+    style="width: {{style.iconWidth || '15%'}};"></image>
+  {{text}}
+</view>

@@ -1,0 +1,46 @@
+/* components/sl-top-filter/index.wxss */
+.root {
+  position: sticky;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+}
+.top-filter {
+  display: flex;
+  position: relative;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+  width: 100%;
+  padding: 2.5% 0;
+}
+.top-filter .ceil {
+  display: block;
+  position: relative;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+  width: calc(100vw / (var(--count)));
+  font-size: small; 
+  color: #888;
+  transition: all 0.25s;
+}
+.top-filter .ceil.selected {
+  position: relative;
+  color: #444;
+  font-size: medium;
+  font-weight: 700;
+  transition: all 0.25s;
+}
+.top-filter .ceil.selected::after {
+  content: '';
+  position: absolute;
+  width: 10rpx;
+  height: 10rpx;
+  left: 50%;
+  background: #444;
+  bottom: -40%;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}

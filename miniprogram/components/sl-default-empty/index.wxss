@@ -1,0 +1,17 @@
+/* components/sl-default-empty/index.wxss */
+/* 缺省状态 */
+.default {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+  letter-spacing: 1px;
+  font-size: 30rpx;
+}
+.default image {
+  width: 60%;
+  height: auto;
+  margin: 0% 20%;
+}

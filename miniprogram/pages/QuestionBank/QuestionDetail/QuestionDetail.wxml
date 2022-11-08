@@ -1,0 +1,114 @@
+<view wx:if='{{anwserCompletion==false}}'>
+  <view wx:if='{{questionList.length<1}}'>暂无题目</view>
+  <view wx:else>
+    <scroll-view scroll-y class="questionBox">
+      <view class="questionText">
+        <view wx:if="{{questionList[index].question_img!=''}}">
+          <image class="img" mode="widthFix" src="{{imgUrl+questionList[index].question_img}}"></image>
+        </view>
+        <view wx:if="{{questionList[index].question!=''}}">
+          {{index+1}}.{{questionList[index].question}}
+        </view>
+      </view>
+    </scroll-view>
+    <view wx:if='{{questionList[index].question_type=="选择题" || questionList[index].question_type=="多选题" || questionList[index].question_type=="判断题"}}'>
+      <scroll-view scroll-y style="height: 650rpx; margin-top: 50rpx;">
+        <button id='A' class="button" bindtap="btnOpClick" style="background-color: {{bcA}};">
+          A.{{questionList[index].select1[0]}}
+        </button>
+        <button id='B' class="button" bindtap="btnOpClick" style="background-color: {{bcB}};">
+          B.{{questionList[index].select1[1]}}
+        </button>
+        <button id='C' wx:if="{{questionList[index].select3!=''}}" class="button" bindtap="btnOpClick" style="background-color: {{bcC}};">
+          C.{{questionList[index].select1[2]}}
+        </button>
+        <button id='D' wx:if="{{questionList[index].select4!=''}}" class="button" bindtap="btnOpClick" style="background-color: {{bcD}};">
+          D.{{questionList[index].select1[3]}}
+        </button>
+        <button id='E' wx:if="{{questionList[index].select5!=''}}" class="button" bindtap="btnOpClick" style="background-color: {{bcE}};">
+          E.{{questionList[index].select1[4]}}
+        </button>
+      </scroll-view>
+    </view>
+    <view wx:elif="{{questionList[index].question_type == '填空题'}}">
+      <view wx:for="{{selectCount[index]}}" wx:for-index="index1" wx:key="index">
+        <view class="input_panel">
+          <view>{{index1+1}}、</view>
+          <input class='input' bindinput='titleInput' id="{{index1}} " value="{{inputValue}}"></input>
+        </view>
+      </view>
+    </view>
+    <button class='authorize-button' bindtap="turnBackPageWithLoss">
+      <text>返回</text>
+    </button>
+    <view class="control">
+      <!-- <view class="ceil" style="margin: 0 0 0 2.5%">
+        <sl-widgets-ceil 
+          wx:if="{{index!=0}}"
+          text="上一题"
+          style="{{ {height: '15vw', iconWidth: '7.5%', radius: '1.25em'} }}"
+          icon="/svg/individual.svg"
+          bindtap="lastQuestion"></sl-widgets-ceil>
+        <sl-widgets-ceil 
+          wx:if="{{index!=questionList.length-1}}"
+          text="下一题"
+          style="{{ {height: '15vw', iconWidth: '7.5%', radius: '1.25em'} }}"
+          icon="/svg/individual.svg"
+          bindtap="nextQuestion"></sl-widgets-ceil>
+      </view> -->
+      <button class="leftButton" bindtap="lastQuestion" wx:if="{{index!=0}}">
+        <text>上一题</text>
+      </button>
+      <button class="rightButton" bindtap="nextQuestion" wx:if="{{index!=questionList.length-1}}">
+        <text>下一题</text>
+      </button>
+      <button class="rightButton" bindtap="submit" wx:if="{{index==questionList.length-1}}">
+        <text>提 交</text>
+      </button>
+    </view>
+  </view>
+</view>
+<!-- 答题结束界面 -->
+<view class='flex-container' wx:else>
+  <text class='title-text'>答题结束</text>
+  <text class='content-text'>共{{questionList.length}}道题，答对：{{rightNum}}，得分：{{score}}</text>
+  <view class='outcomeView'>
+    <view wx:for="{{questionList}}" wx:key="index" class="outcomeLine" wx:for-index='questionIndex' wx:for-item='questionItem'>
+      <text class='content-text'>{{questionItem.question}}</text>
+      <view wx:for="{{questionItem.select1}}" wx:for-index='optionIndex' wx:key='index'>
+        <view wx:if="{{questionItem.question_type=='选择题' || questionItem.question_type=='判断题'}}">
+          <view class="{{questionItem.ans==item?'rightSelect':optionMark[optionIndex]==selectList[questionIndex]?'errorSelect':'noSelect'}}">
+            <text>{{optionMark[optionIndex]}}.{{item}}</text>
+          </view>
+        </view>
+        <view wx:elif="{{questionItem.question_type=='多选题'}}">
+          <wxs module="util">
+              var ansMatch = function(stra, strb) {
+                return stra.search(strb) != -1;
+              }
+              module.exports.ansMatch = ansMatch;
+            </wxs>
+          <view class="{{util.ansMatch(questionItem.ans,optionMark[optionIndex])?'rightSelect':util.ansMatch(selectList[questionIndex],optionMark[optionIndex])?'errorSelect':'noSelect'}}">
+            <text>{{optionMark[optionIndex]}}.{{item}}</text>
+          </view>
+        </view>
+        <view wx:elif="{{questionItem.question_type=='填空题'}}">
+          <view class="{{fillAnswer[questionIndex][optionIndex]==item?'rightSelect':'errorSelect'}}">
+            <text>{{fillAnswer[questionIndex][optionIndex]}}  {{item}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="buttomView">
+    <!-- <button class='authorize-button' bindtap="goToRank">
+      <text>查看排行榜</text>
+    </button>
+    <button class='authorize-button' bindtap="goToHistory">
+      <text>查看历史记录</text>
+    </button> -->
+    <button class='authorize-button' bindtap="turnBackPage">
+      <text>返回</text>
+    </button>
+  </view>
+</view>

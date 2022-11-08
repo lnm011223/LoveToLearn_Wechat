@@ -1,0 +1,49 @@
+/* components/sl-title-2/index.wxss */
+.title-wrapper {
+  width: 100vw;
+  position: sticky;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  top: 0%;
+  height: 30vh;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #eee, #fafafa);
+  overflow: hidden;
+}
+.title-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0%;
+  width: 90%;
+  height: 5rpx;
+  background: #f1f1f1;
+}
+.title-wrapper .background {
+  width: 100%;
+  z-index: 0;
+  height: auto;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  opacity: .45;
+}
+.title-wrapper .title {
+  position: absolute;
+  bottom: 10%;
+  left: 7.5%;
+  line-height: 2em;
+  font-size: medium;
+  letter-spacing: 2px;
+  text-align: left;
+  width: 100%;
+}
+.title-wrapper .title :nth-child(1) {
+  font-size: xx-large;
+  font-weight: 700;
+  color: #444;
+}
+.title-wrapper .title :nth-child(2) {
+  text-indent: 2.5em;
+  color: #666;
+}

@@ -1,0 +1,4 @@
+<!--components/sl-label-1/index.wxml-->
+<view
+  style="background: {{style.background || 'linear-gradient(to left top, #00cdff, #82d8cf)'}}; color: {{style.color || '#fff'}}; padding: {{style.padding || '.2em .4em'}}; font-size: {{style.fontSize || 'small'}}; border-radius: {{style.radius || '.5em'}};"
+  class="id-flag">{{text}}</view>

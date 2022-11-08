@@ -1,0 +1,11 @@
+<!--components/sl-info-box/index.wxml-->
+<view class="info-box">
+  <block wx:for="{{infoBox}}" wx:key="item">
+    <view class="ceil">
+      <image src="{{item.icon}}" mode="widthFix"></image>
+      <view>
+        <block wx:if="{{item.type.length > 0}}">{{item.type}}：</block>{{item.detail}}
+      </view>
+    </view>
+  </block>
+</view>

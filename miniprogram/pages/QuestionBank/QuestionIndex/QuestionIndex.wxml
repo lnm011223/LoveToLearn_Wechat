@@ -1,0 +1,16 @@
+<!--pages/Question/Question.wxml-->
+<!-- <text>pages/Question/Question.wxml</text> -->
+
+
+<view class="app">
+  <sl-title-2
+    h1="问答"
+    h2="中心 | CENTER">
+  </sl-title-2>
+  <!-- 主体 -->
+  <view class="main">
+    <block wx:for="{{gradeList}}" wx:key="id">
+      <sl-column-ceil type="" item="{{item}}" bindtap="toGradeQuestion"></sl-column-ceil>
+    </block>
+  </view>
+</view>

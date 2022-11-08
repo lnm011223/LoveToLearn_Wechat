@@ -1,0 +1,30 @@
+/* components/sl-button-3/index.wxss *//* components/sl-button-2/index.wxss */
+.btn {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: var(--width);
+  height: var(--height);
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.75em;
+  transition: all 0.25s;
+  box-shadow: 4px 4px 5px #f1f1f1, -4px -4px 5px #fff;
+  font-size: 35rpx;
+  overflow: hidden;
+}
+.btn[data-id = "1"]  {
+  filter: hue-rotate(30deg);
+  box-shadow: inset 4px 4px 5px #f1f1f1, inset -4px -4px 5px #fff;
+  transition: all 0.25s !important;
+}
+.background {
+  position: absolute;
+  z-index: -1;
+  width: 50%;
+  height: auto;
+  bottom: -10%;
+  right: 5%;
+  opacity: .35;
+}

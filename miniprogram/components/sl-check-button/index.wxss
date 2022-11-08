@@ -1,0 +1,21 @@
+/* components/sl-check-button/index.wxss */
+.btn {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: smaller;
+  font-weight: 400;
+  color: #888;
+  border-radius: 1em;
+  padding: 5%;
+  box-shadow: 4px 4px 5px #f1f1f1, -4px -4px 5px #fff;
+  transition: all 0.25s;
+}
+.btn[data-id = "1"] {
+  color: #0066ffaa;
+  box-shadow: inset 4px 4px 5px #f1f1f1, inset -4px -4px 5px #fff;
+  transition: all 0.25s;
+}

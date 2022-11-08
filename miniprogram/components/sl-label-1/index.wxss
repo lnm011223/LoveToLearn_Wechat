@@ -1,0 +1,14 @@
+/* components/sl-label-1/index.wxss */
+.id-flag {
+  display: flex;
+  box-sizing: border-box;
+  padding: .2em .4em;
+  white-space: nowrap;
+  width: fit-content;
+  border-radius: .5em;
+  background-image: linear-gradient(to left top, #00cdff, #82d8cf);
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  font-size: small;
+}
